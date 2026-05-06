@@ -1,1 +1,1 @@
-/* CPM Inline Editor v3 — see download */
+/* CPM Editor v3 — see cpm-editor.js download */

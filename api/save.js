@@ -1,1 +1,1 @@
-/* CPM Save API — see download */
+// CPM Save API v2 — see save.js download
