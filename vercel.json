@@ -1,17 +1,31 @@
 {
   "version": 2,
+  "buildCommand": "npm install",
+  "outputDirectory": ".",
   "functions": {
     "api/save.js": {
       "memory": 256,
       "maxDuration": 15
     }
   },
+  "routes": [
+    { "src": "/admin", "dest": "/admin/index.html" },
+    { "src": "/pricing", "dest": "/pricing.html" },
+    { "src": "/privacy", "dest": "/privacy.html" },
+    { "src": "/terms", "dest": "/terms.html" },
+    { "src": "/api/(.*)", "dest": "/api/$1" }
+  ],
   "headers": [
     {
-      "source": "/api/(.*)",
+      "source": "/admin/(.*)",
       "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex" },
         { "key": "Cache-Control", "value": "no-store" }
       ]
+    },
+    {
+      "source": "/api/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "no-store" }]
     }
   ]
 }
